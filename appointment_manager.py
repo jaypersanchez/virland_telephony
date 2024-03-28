@@ -10,6 +10,7 @@ from google.auth.transport.requests import Request
 CREDENTIALS_FILE_PATH = 'credentials.json'
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
+
 def authenticate_google():
     """Authenticate and return Google Calendar API service."""
     creds = None
