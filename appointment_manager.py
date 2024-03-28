@@ -5,6 +5,10 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import time
+from datetime import datetime
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
 # Path to your credentials.json
 CREDENTIALS_FILE_PATH = 'credentials.json'
@@ -64,7 +68,15 @@ if __name__ == "__main__":
     flow = InstalledAppFlow.from_client_secrets_file(
         CREDENTIALS_FILE_PATH, SCOPES)
     creds = flow.run_local_server(port=0)
+    # Start the timer
+    start_time = time.time()
     details = listen_for_appointment()
     print(f"Appointment Details {details}")
     #if details:
         #create_calendar_event(details)
+    # End the timer
+    end_time = time.time()
+
+    # Calculate and print the duration
+    duration = end_time - start_time
+    print(f"Execution Time: {duration} seconds")

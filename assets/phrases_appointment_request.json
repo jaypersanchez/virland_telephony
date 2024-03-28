@@ -88,5 +88,14 @@
         },
         {
             "request": "I would like to reschedule my physical therapy session to a more convenient time."
+        },
+        {
+            "request": "I'd like to make an appointment for tomorrow with doctor"
+        },
+        {
+            "request": "I'd like to make an appointment for next week with doctor"
+        },
+        {
+            "request": "I'd like to make an appointment for next month with doctor"
         }
 ]
