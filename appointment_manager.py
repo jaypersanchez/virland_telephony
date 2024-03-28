@@ -49,7 +49,7 @@ def create_calendar_event(details):
     """Create an event in Google Calendar based on the details."""
     service = authenticate_google()
     # Parse 'details' to extract date and time, here we just use placeholders
-    event_date = "2023-06-05"
+    event_date = "2024-06-05"
     event_time_start = "15:00:00"
     event_time_end = "16:00:00"
     event = {
@@ -65,5 +65,6 @@ if __name__ == "__main__":
         CREDENTIALS_FILE_PATH, SCOPES)
     creds = flow.run_local_server(port=0)
     details = listen_for_appointment()
-    if details:
-        create_calendar_event(details)
+    print(f"Appointment Details {details}")
+    #if details:
+        #create_calendar_event(details)

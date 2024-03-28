@@ -1,0 +1,92 @@
+[
+        {
+            "request": "I'd like to book the earliest available appointment with my primary care physician."
+        },
+        {
+            "request": "Can you schedule a check-up appointment for me?"
+        },
+        {
+            "request": "I need to make an appointment for a routine physical examination."
+        },
+        {
+            "request": "Is there any slot available for a consultation with the dermatologist this Wednesday afternoon?"
+        },
+        {
+            "request": "Please arrange an appointment for a dental cleaning."
+        },
+        {
+            "request": "Book me an appointment for a vaccination next weekend."
+        },
+        {
+            "request": "I have to have a follow-up appointment to discuss recent test results."
+        },
+        {
+            "request": "Please sign me up for the next available appointment for a mental health consultation."
+        },
+        {
+            "request": "Can I get an appointment for an eye check-up sometime next week?"
+        },
+        {
+            "request": "I would like to schedule my annual health screening."
+        },
+        {
+            "request": "I need to book an appointment for an orthopedic consultation."
+        },
+        {
+            "request": "Could we set up an appointment to discuss my ongoing treatment plan?"
+        },
+        {
+            "request": "I’d like to schedule a pediatric appointment for my child this Saturday."
+        },
+        {
+            "request": "I need to arrange an appointment for a cardiology check."
+        },
+        {
+            "request": "Please help me set up an appointment for a nutritional counseling session."
+        },
+        {
+            "request": "I need to reschedule my appointment with the primary care physician to a later date."
+        },
+        {
+            "request": "Can we find a new time for my routine physical examination? I won't make the current one."
+        },
+        {
+            "request": "I have to cancel my dental cleaning appointment. Can you help me with that?"
+        },
+        {
+            "request": "Unfortunately, I must cancel my vaccination appointment for next weekend."
+        },
+        {
+            "request": "Is it possible to reschedule my follow-up discussion about test results to next month?"
+        },
+        {
+            "request": "Due to a scheduling conflict, I need to cancel my mental health consultation."
+        },
+        {
+            "request": "Can I change the time for my eye check-up to sometime later in the week?"
+        },
+        {
+            "request": "I’d like to reschedule my child’s pediatric appointment to any day after Wednesday."
+        },
+        {
+            "request": "I need to cancel my orthopedic consultation and will call back to reschedule."
+        },
+        {
+            "request": "Please reschedule my cardiology check to the earliest available slot next month."
+        },
+        {
+            "request": "I must cancel my nutritional counseling session and would like to discuss alternative dates."
+        },
+        {
+            "request": "Can you help me move my annual health screening to a later date?"
+        },
+        {
+            "request": "I'm calling to reschedule my appointment for ongoing treatment discussion to any available time next week."
+        },
+        {
+            "request": "Due to unforeseen circumstances, I have to cancel my appointment for a skin consultation."
+        },
+        {
+            "request": "I would like to reschedule my physical therapy session to a more convenient time."
+        }
+]
