@@ -9,6 +9,8 @@ import time
 from datetime import datetime
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+import re
+from textblob import TextBlob
 
 # Path to your credentials.json
 CREDENTIALS_FILE_PATH = 'credentials.json'
@@ -31,6 +33,24 @@ def authenticate_google():
             pickle.dump(creds, token)
     return build('calendar', 'v3', credentials=creds)
 
+def analyze_intent(speech_text):
+    """
+    Analyzes the text to classify the intent and extract details like 'doctor's name'.
+    """
+    # Simple keyword matching for intent classification
+    if "cancel" in speech_text:
+        intent = "cancel_appointment"
+    elif "reschedule" in speech_text:
+        intent = "reschedule_appointment"
+    else:
+        intent = "schedule_appointment"
+
+    # Basic entity extraction using regex (assuming a simple pattern for demonstration)
+    doctor_match = re.search(r"doctor\s+([a-zA-Z]+)", speech_text)
+    doctor_name = doctor_match.group(1) if doctor_match else "Unknown"
+    
+    return intent, doctor_name
+
 def listen_for_appointment():
     """Listen for appointment details and return as text."""
     r = sr.Recognizer()
@@ -41,13 +61,17 @@ def listen_for_appointment():
     try:
         speech_text = r.recognize_google(audio)
         print("You said: " + speech_text)
-        return speech_text
+        
+        # Analyze the intent and extract details
+        intent, doctor_name = analyze_intent(speech_text)
+        print(f"Intent: {intent}, Doctor: {doctor_name}")
+        return speech_text, intent, doctor_name
+
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
-        return None
     except sr.RequestError as e:
         print(f"Could not request results from Google Speech Recognition service; {e}")
-        return None
+    
 
 def create_calendar_event(details):
     """Create an event in Google Calendar based on the details."""
@@ -70,8 +94,8 @@ if __name__ == "__main__":
     creds = flow.run_local_server(port=0)
     # Start the timer
     start_time = time.time()
-    details = listen_for_appointment()
-    print(f"Appointment Details {details}")
+    speech_text, intent, doctor_name = listen_for_appointment()
+    print(f"Extracted speech: {speech_text}, Intent: {intent}, Doctor: {doctor_name}")
     #if details:
         #create_calendar_event(details)
     # End the timer
